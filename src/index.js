@@ -1,4 +1,4 @@
-let city = "paris";
+let city = "Grande prairie";
 let apiKey = "dbdeefe04c94b8d2607c00ef173913af";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 function showTemperature(response) {
@@ -13,9 +13,10 @@ function showTemperature(response) {
   temperatureElement.innerHTML = `${temperature}`;
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
-  iconElement.setAttribute =
-    ("src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 let h1 = document.querySelector("#city");
 h1.innerHTML = city;
