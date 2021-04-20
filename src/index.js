@@ -6,13 +6,14 @@ function formatDate(timestamp) {
   }
   let minutes = date.getMinutes();
   if (hours < 10) {
-    hours = `0${hours}`;
+    hours = `${hours}`;
   }
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
 function showTemperature(response) {
+  let cityElement = document.querySelector("#city");
   let temperature = Math.round(celsiusTemperature);
   let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#temperature-description");
@@ -20,6 +21,7 @@ function showTemperature(response) {
   let windSpeedElement = document.querySelector("#windSpeed");
   let iconElement = document.querySelector("#icon");
   let dateElement = document.querySelector("#date");
+  cityElement.innerHTML = response.data.name;
   celsiusTemperature = response.data.main.temp;
   description.innerHTML = response.data.weather[0].description;
   temperatureElement.innerHTML = `${temperature}`;
