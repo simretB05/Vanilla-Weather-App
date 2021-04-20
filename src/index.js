@@ -70,4 +70,4 @@ celsiusLink.addEventListener("click", displaycelsiusTemperature);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-search("New York");
+search("Addis Ababa");
